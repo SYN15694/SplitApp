@@ -1,0 +1,26 @@
+<mvc:View
+    controllerName="splitapp.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <List
+            id="StudentUniList"
+            items="{students>StudentToUni/results}"
+            mode="SingleSelectMaster"
+            selectionChange="onSelectionChange"
+        >
+            <items>
+                <StandardListItem
+                    id="StudentListItem"
+                    title="{students>UniName}"
+                    type="Active"
+                />
+            </items>
+        </List>
+    </Page>
+</mvc:View>
