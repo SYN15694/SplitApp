@@ -24,12 +24,13 @@ sap.ui.define([
 
                 var oItem = oEvent.getParameter("listItem");
                 var oCtx = oItem.getBindingContext("students");
-                var studentId = oCtx.getProperty("Id");
+                var studentId = oCtx.getPath();
+                // var student = studentPath.split("/").slice(-1).pop();
 
                 // var studentId = oEvent.getSource().getSelectedItem().getBindingContext().getProperty("Id");
                 this.getOwnerComponent().getRouter()
                     .navTo("Detail",
-                        { student: studentId })
+                        { student: student })
             }
 
 

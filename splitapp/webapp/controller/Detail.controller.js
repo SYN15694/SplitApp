@@ -9,7 +9,7 @@ sap.ui.define([
                 this.getOwnerComponent().getRouter().getRoute("Detail").attachPatternMatched(this._onRouteMatched, this);
             },
             _onRouteMatched: function (oEvent) {
-                debugger;
+               
                 this._student = oEvent.getParameter("arguments").student;
                 this.getView().bindElement("/orders/" + this._student);
             }
