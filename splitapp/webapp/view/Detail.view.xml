@@ -6,21 +6,80 @@
 >
     <Page
         id="page"
-        title="{i18n>title}"
+        title="{students>Id} - {students>Name}"
     >
-        <List
-            id="StudentUniList"
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Button
+                        text="Back"
+                        icon="sap-icon://nav-back"
+                        press="onBack"
+                    />
+                </contentLeft>
+                <contentMiddle>
+                    <Title text="{students>Id} - {students>Name}" />
+                </contentMiddle>
+                <contentRight>
+                    <Button
+                        text="Accept"
+                        icon="sap-icon://accept"
+                        press="onAccept"
+                    />
+                </contentRight>
+            </Bar>
+        </customHeader>
+       
+        <Table
+            id="UniTable"
             items="{students>StudentToUni/results}"
-            mode="SingleSelectMaster"
-            selectionChange="onSelectionChange"
         >
+            <columns>
+                <Column id="IDColumn">
+                    <Text
+                        id="columnTextID"
+                        text="ID"
+                    />
+                </Column>
+                <Column id="UniIDColumn">
+                    <Text
+                        id="columnUniID"
+                        text="UniID"
+                    />
+                </Column>
+                <Column id="NameColumn">
+                    <Text
+                        id="columnTextName"
+                        text="Name"
+                    />
+                </Column>
+
+                <!-- Add more columns as necessary -->
+            </columns>
             <items>
-                <StandardListItem
-                    id="StudentListItem"
-                    title="{students>UniName}"
-                    type="Active"
-                />
+                <ColumnListItem id="ColumnListItem">
+                    <cells>
+                        <Text
+                            id="IDText"
+                            text="{students>Id}"
+                        />
+                        <Text
+                            id="UniIDText"
+                            text="{students>UniId}"
+                        />
+
+                        <Input
+                            id="NameInput"
+                            value="{students>UniName}"
+                            editable="{= ${students>/editable}}"
+                            showValueHelp="true"
+                            valueHelpRequest=".onValueHelpRequest"
+                        />
+
+                        <!-- Bind more fields as necessary -->
+                    </cells>
+                </ColumnListItem>
             </items>
-        </List>
+        </Table>
     </Page>
 </mvc:View>

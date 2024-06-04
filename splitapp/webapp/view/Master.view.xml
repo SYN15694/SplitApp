@@ -8,6 +8,32 @@
         id="page"
         title="{i18n>title}"
     >
+      <customHeader>
+            <Bar>
+                <contentMiddle>
+                    <SearchField
+                        id="searchField"
+                        placeholder="Search"
+                        search="onSearch"
+                        liveChange="onLiveChange"
+                    />
+                </contentMiddle>
+                <contentRight>
+                    <Button
+                        id="refreshButton"
+                        icon="sap-icon://refresh"
+                        press="onRefresh"
+                    />
+                    <Button
+                        id="addButton"
+                        text="Add"
+                        icon="sap-icon://add"
+                        press="onAdd"
+                    />
+                </contentRight>
+            </Bar>
+        </customHeader>
+        
         <List
             id="StudentList"
             items="{students>/results}"

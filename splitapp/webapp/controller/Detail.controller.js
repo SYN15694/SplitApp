@@ -9,9 +9,12 @@ sap.ui.define([
                 this.getOwnerComponent().getRouter().getRoute("Detail").attachPatternMatched(this._onRouteMatched, this);
             },
             _onRouteMatched: function (oEvent) {
-               
+
                 this._student = oEvent.getParameter("arguments").student;
-                this.getView().bindElement("/orders/" + this._student);
+                this.getView().bindElement({
+                    path: "/results/" + this._student,
+                    model: "students"
+                });
             }
             // onSelectionChange: function (oEvent) {
             //     var sProductId = oEvent.getSource().getBindingContext().getProperty("productId");

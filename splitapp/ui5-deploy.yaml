@@ -17,7 +17,7 @@ builder:
           url: http://hana.ciber.vn:8001/
           client: "100"
         app:
-          name: ZAPP_SPLIT
+          name: ZAPP_SPLIT1
           description: Split App
           package: ZPK_HUNGVT1
           transport: ED1K900103

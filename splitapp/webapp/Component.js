@@ -65,7 +65,9 @@ sap.ui.define([
                     success: (oData, oResponse) => {
                         var headers = oResponse.headers;
                         var jsonModel = new JSONModel(oData);
+                        jsonModel.setProperty("/editable", false);
                         this.setModel(jsonModel, "students"); // setting the model data
+                
                         this._busyDialog.close();
                     },
                     error: (oError) => {

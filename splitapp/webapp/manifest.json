@@ -46,7 +46,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.124.0",
+      "minUI5Version": "1.60.0",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -101,7 +101,7 @@
 				},
 				{
 					"name": "Detail",
-					"pattern": "students/:Id:",
+					"pattern": "students/:student:",
 					"target": [
 						"Master",
 						"Detail"
