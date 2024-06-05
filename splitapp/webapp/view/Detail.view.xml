@@ -62,7 +62,8 @@
                 <!-- Add more columns as necessary -->
             </columns>
             <items>
-                <ColumnListItem id="ColumnListItem">
+                <ColumnListItem id="ColumnListItem"
+                                press="onDetailPress">
                     <cells>
                         <Text
                             id="IDText"
