@@ -28,7 +28,6 @@ sap.ui.define([
                 var studentPath = oCtx.getPath();
                 var student = studentPath.split("/").slice(-1).pop();
 
-                // var studentId = oEvent.getSource().getSelectedItem().getBindingContext().getProperty("Id");
                 this.getOwnerComponent().getRouter()
                     .navTo("Detail",
                         { student: student })
