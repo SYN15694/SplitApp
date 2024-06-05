@@ -9,7 +9,7 @@
         title="{i18n>title}"
     >
       <customHeader>
-            <Bar>
+            <Bar id="Bar">
                 <contentMiddle>
                     <SearchField
                         id="searchField"

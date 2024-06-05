@@ -9,19 +9,24 @@
         title="{students>Id} - {students>Name}"
     >
         <customHeader>
-            <Bar>
+            <Bar id="BarDetail">
                 <contentLeft>
                     <Button
+                        id="BackButton"
                         text="Back"
                         icon="sap-icon://nav-back"
                         press="onBack"
                     />
                 </contentLeft>
                 <contentMiddle>
-                    <Title text="{students>Id} - {students>Name}" />
+                    <Title
+                        id="Title"
+                        text="{students>Id} - {students>Name}"
+                    />
                 </contentMiddle>
                 <contentRight>
                     <Button
+                        id="AcceptButton"
                         text="Accept"
                         icon="sap-icon://accept"
                         press="onAccept"
@@ -29,7 +34,7 @@
                 </contentRight>
             </Bar>
         </customHeader>
-       
+
         <Table
             id="UniTable"
             items="{students>StudentToUni/results}"
@@ -75,6 +80,15 @@
                             showValueHelp="true"
                             valueHelpRequest=".onValueHelpRequest"
                         />
+                        <!-- <DatePicker
+                            id="dummyDatePicker"
+                            value="{students>UniName}"
+                            displayFormat="long"
+                        /> -->
+                        <!-- <DateTimePicker
+                            id="DTP1"
+                            value="{path: 'students>UniName', type: 'sap.ui.model.type.DateTime', formatOptions: {style: 'long'}}"
+                        /> -->
 
                         <!-- Bind more fields as necessary -->
                     </cells>

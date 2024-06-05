@@ -12,9 +12,14 @@ sap.ui.define([
     "sap/ui/model/resource/ResourceModel",
     "sap/m/BusyDialog",
     "sap/m/MessagePopover",
-    "sap/m/MessagePopoverItem"
+    "sap/m/MessagePopoverItem",
+    "sap/m/DatePicker",
+    "sap/m/Dialog",
+    "sap/m/Button",
+    "sap/m/Text"
 ],
-    function (UIComponent, Device, models, ODataModel, JSONModel, fioriLibrary, ResourceModel, BusyDialog, MessagePopover, MessagePopoverItem) {
+    function (UIComponent, Device, models, ODataModel, JSONModel, fioriLibrary,
+        ResourceModel, BusyDialog, MessagePopover, MessagePopoverItem, DatePicker, Dialog, Button, Text) {
         "use strict";
 
         return UIComponent.extend("splitapp.Component", {
@@ -65,9 +70,9 @@ sap.ui.define([
                     success: (oData, oResponse) => {
                         var headers = oResponse.headers;
                         var jsonModel = new JSONModel(oData);
-                        jsonModel.setProperty("/editable", false);
+                        jsonModel.setProperty("/editable", true);
                         this.setModel(jsonModel, "students"); // setting the model data
-                
+
                         this._busyDialog.close();
                     },
                     error: (oError) => {
@@ -76,6 +81,7 @@ sap.ui.define([
                     }
                 });
             }
+            
         });
     }
 );

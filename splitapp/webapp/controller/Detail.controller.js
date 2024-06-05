@@ -15,12 +15,11 @@ sap.ui.define([
                     path: "/results/" + this._student,
                     model: "students"
                 });
+            },
+
+            onAccept: function () {
+                var oModel = this.getView().getModel("students");
+                var data = oModel.getData();
             }
-            // onSelectionChange: function (oEvent) {
-            //     var sProductId = oEvent.getSource().getBindingContext().getProperty("productId");
-            //     this.getOwnerComponent().getRouter()
-            //         .navTo("details",
-            //             { orderId: this._orderId, productId: sProductId });
-            // },
         });
     });
