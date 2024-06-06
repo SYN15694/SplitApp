@@ -6,7 +6,7 @@
 >
     <Page
         id="page"
-        title="{students>Id} - {students>Name}"
+        title="Detail"
     >
         <customHeader>
             <Bar id="BarDetail">
@@ -14,87 +14,118 @@
                     <Button
                         id="BackButton"
                         text="Back"
-                        icon="sap-icon://nav-back"
                         press="onBack"
+                        icon="sap-icon://nav-back"
                     />
                 </contentLeft>
                 <contentMiddle>
-                    <Title
-                        id="Title"
-                        text="{students>Id} - {students>Name}"
-                    />
+                    <Title text="Detail" />
                 </contentMiddle>
                 <contentRight>
                     <Button
                         id="AcceptButton"
                         text="Accept"
-                        icon="sap-icon://accept"
                         press="onAccept"
+                        icon="sap-icon://accept"
                     />
                 </contentRight>
             </Bar>
         </customHeader>
-
-        <Table
-            id="UniTable"
-            items="{students>StudentToUni/results}"
-        >
-            <columns>
-                <Column id="IDColumn">
-                    <Text
-                        id="columnTextID"
-                        text="ID"
+        <content>
+            <VBox>
+                <Panel
+                    id="DetailPanel"
+                    headerText="Header Detail"
+                    width="auto"
+                    height="auto"
+                >
+                    <ObjectAttribute
+                        title="Date of Birth"
+                        text="{students>Dob}"
                     />
-                </Column>
-                <Column id="UniIDColumn">
-                    <Text
-                        id="columnUniID"
-                        text="UniID"
+                    <!-- <FlexBox>
+                    <Label
+                        id="DateOfBirth"
+                        text="Date of Birth"
+                        labelFor="DateOfBirthText"
                     />
-                </Column>
-                <Column id="NameColumn">
                     <Text
-                        id="columnTextName"
-                        text="Name"
+                        id="DateOfBirthText"
+                        text="{students>Dob}"
                     />
-                </Column>
+                </FlexBox> -->
+                </Panel>
+            </VBox>
+            <Panel
+                id="TablePanel"
+                headerText="{students>Id} - {students>Name}"
+                width="auto"
+                height="auto"
+            >
+                <Table
+                    id="UniTable"
+                    items="{students>StudentToUni/results}"
+                >
+                    <columns>
+                        <Column id="IDColumn">
+                            <Text
+                                id="columnTextID"
+                                text="ID"
+                            />
+                        </Column>
+                        <Column id="UniIDColumn">
+                            <Text
+                                id="columnUniID"
+                                text="UniID"
+                            />
+                        </Column>
+                        <Column id="NameColumn">
+                            <Text
+                                id="columnTextName"
+                                text="Name"
+                            />
+                        </Column>
 
-                <!-- Add more columns as necessary -->
-            </columns>
-            <items>
-                <ColumnListItem id="ColumnListItem"
-                                press="onDetailPress">
-                    <cells>
-                        <Text
-                            id="IDText"
-                            text="{students>Id}"
-                        />
-                        <Text
-                            id="UniIDText"
-                            text="{students>UniId}"
-                        />
+                        <!-- Add more columns as necessary -->
+                    </columns>
+                    <items>
+                        <ColumnListItem
+                            id="ColumnListItem"
+                            press="onDetailPress"
+                        >
+                            <cells>
+                                <Text
+                                    id="IDText"
+                                    text="{students>Id}"
+                                />
+                                <Text
+                                    id="UniIDText"
+                                    text="{students>UniId}"
+                                />
 
-                        <Input
-                            id="NameInput"
-                            value="{students>UniName}"
-                            editable="{= ${students>/editable}}"
-                            showValueHelp="true"
-                            valueHelpRequest=".onValueHelpRequest"
-                        />
-                        <!-- <DatePicker
+                                <Input
+                                    id="NameInput"
+                                    value="{students>UniName}"
+                                    editable="{= ${students>/editable}}"
+                                    showValueHelp="true"
+                                    valueHelpRequest=".onValueHelpRequest"
+                                />
+                                <!-- <DatePicker
                             id="dummyDatePicker"
                             value="{students>UniName}"
                             displayFormat="long"
                         /> -->
-                        <!-- <DateTimePicker
+                                <!-- <DateTimePicker
                             id="DTP1"
                             value="{path: 'students>UniName', type: 'sap.ui.model.type.DateTime', formatOptions: {style: 'long'}}"
                         /> -->
 
-                        <!-- Bind more fields as necessary -->
-                    </cells>
-                </ColumnListItem>
-            </items>
-        </Table>
+                                <!-- Bind more fields as necessary -->
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </Panel>
+        </content>
     </Page>
 </mvc:View>
