@@ -61,7 +61,7 @@
                         <Text text="Dob" />
                         <Input
                             value="{students>Dob}"
-                            width="200px"
+                            width="auto"
                             editable="false"
                             enabled="true"
                         />
