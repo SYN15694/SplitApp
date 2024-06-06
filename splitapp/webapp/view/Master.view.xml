@@ -8,8 +8,10 @@
         id="page"
         title="{i18n>title}"
     >
-      <customHeader>
-            <Bar id="Bar">
+        <customHeader>
+            <Bar
+                id="Bar"
+            >
                 <contentMiddle>
                     <SearchField
                         id="searchField"
@@ -33,7 +35,7 @@
                 </contentRight>
             </Bar>
         </customHeader>
-        
+
         <List
             id="StudentList"
             items="{students>/results}"

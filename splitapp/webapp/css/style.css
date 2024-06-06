@@ -1,4 +1,4 @@
-/* Enter your custom styles here */
-.leftAlign {
-    text-align: left !important;
+.customCSS .customText {
+    font-weight: bold;
+    color: red !important;
 }

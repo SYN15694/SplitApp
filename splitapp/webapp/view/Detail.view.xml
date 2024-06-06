@@ -40,7 +40,7 @@
                 headerText="{students>Id} - {students>Name}"
             >
                 <HBox>
-                    <VBox class="sapUiResponsiveMargin">
+                    <VBox class="sapUiSmallMarginEnd">
                         <Text text="Id" />
                         <Input
                             value="{students>Id}"
@@ -57,8 +57,11 @@
                             enabled="true"
                         />
                     </VBox>
-                    <VBox class="sapUiResponsiveMargin ">
-                        <Text text="Dob" />
+                    <VBox>
+                        <Text
+                            text="Dob"
+                            class="customText"
+                        />
                         <Input
                             value="{students>Dob}"
                             width="auto"

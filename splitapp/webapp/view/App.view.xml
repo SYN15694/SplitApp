@@ -5,7 +5,7 @@
     displayBlock="true"
     xmlns="sap.m"
 >
-    <App id="app">
+    <App id="app" class="customCSS">
         <SplitApp id="App" />
     </App>
 </mvc:View>
