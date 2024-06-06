@@ -1,2 +1,4 @@
 /* Enter your custom styles here */
-
+.leftAlign {
+    text-align: left !important;
+}

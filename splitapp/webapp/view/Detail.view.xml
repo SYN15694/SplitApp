@@ -3,12 +3,14 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
 >
     <Page
         id="page"
         title="Detail"
     >
-        <customHeader>
+        <!-- <customHeader>
             <Bar id="BarDetail">
                 <contentLeft>
                     <Button
@@ -30,32 +32,42 @@
                     />
                 </contentRight>
             </Bar>
-        </customHeader>
+        </customHeader> -->
+
         <content>
-            <VBox>
-                <Panel
-                    id="DetailPanel"
-                    headerText="Header Detail"
-                    width="auto"
-                    height="auto"
-                >
-                    <ObjectAttribute
-                        title="Date of Birth"
-                        text="{students>Dob}"
-                    />
-                    <!-- <FlexBox>
-                    <Label
-                        id="DateOfBirth"
-                        text="Date of Birth"
-                        labelFor="DateOfBirthText"
-                    />
-                    <Text
-                        id="DateOfBirthText"
-                        text="{students>Dob}"
-                    />
-                </FlexBox> -->
-                </Panel>
-            </VBox>
+            <Panel
+                id="Panel"
+                headerText="{students>Id} - {students>Name}"
+            >
+                <HBox>
+                    <VBox class="sapUiResponsiveMargin">
+                        <Text text="Id" />
+                        <Input
+                            value="{students>Id}"
+                            width="auto"
+                            editable="false"
+                            enabled="true"
+                            class="sapUiSmallMarginBottom"
+                        />
+                        <Text text="Name" />
+                        <Input
+                            value="{students>Name}"
+                            width="auto"
+                            editable="false"
+                            enabled="true"
+                        />
+                    </VBox>
+                    <VBox class="sapUiResponsiveMargin ">
+                        <Text text="Dob" />
+                        <Input
+                            value="{students>Dob}"
+                            width="200px"
+                            editable="false"
+                            enabled="true"
+                        />
+                    </VBox>
+                </HBox>
+            </Panel>
             <Panel
                 id="TablePanel"
                 headerText="{students>Id} - {students>Name}"
@@ -79,13 +91,13 @@
                                 text="UniID"
                             />
                         </Column>
-                        <Column id="NameColumn">
+                        <Column id="NameLabel">
                             <Text
                                 id="columnTextName"
                                 text="Name"
                             />
                         </Column>
-
+                        <Column id="NameInputColumn" />
                         <!-- Add more columns as necessary -->
                     </columns>
                     <items>
@@ -102,7 +114,10 @@
                                     id="UniIDText"
                                     text="{students>UniId}"
                                 />
-
+                                <Label
+                                    text="University Name"
+                                    labelFor="NameInput"
+                                />
                                 <Input
                                     id="NameInput"
                                     value="{students>UniName}"
