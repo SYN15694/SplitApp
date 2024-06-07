@@ -21,7 +21,10 @@
                     />
                 </contentLeft>
                 <contentMiddle>
-                    <Title id="DetailTitle" text="Detail" />
+                    <Title
+                        id="DetailTitle"
+                        text="Detail"
+                    />
                 </contentMiddle>
                 <contentRight>
                     <Button
@@ -29,6 +32,12 @@
                         text="Accept"
                         press="onAccept"
                         icon="sap-icon://accept"
+                    />
+                    <Button
+                        id="RejectButton"
+                        text="Reject"
+                        press="onReject"
+                        icon="sap-icon://decline"
                     />
                 </contentRight>
             </Bar>
