@@ -101,10 +101,18 @@
         },
         {
           "name": "Detail",
-          "pattern": "students/:student:",
+          "pattern": "detail/:student:",
           "target": [
             "Master",
             "Detail"
+          ]
+        },
+        {
+          "name": "About",
+          "pattern": "about/:student:/name/:name:/",
+          "target": [
+            "Master",
+            "About"
           ]
         }
       ],
@@ -116,6 +124,11 @@
         },
         "Detail": {
           "name": "Detail",
+          "controlAggregation": "detailPages",
+          "level": 1
+        },
+        "About": {
+          "name": "About",
           "controlAggregation": "detailPages",
           "level": 1
         }

@@ -18,8 +18,11 @@ sap.ui.define([
             },
 
             onAccept: function () {
-                var oModel = this.getView().getModel("students");
-                var data = oModel.getData();
+                // var oModel = this.getView().getModel("students");
+                // var data = oModel.getData();
+                this.getOwnerComponent().getRouter()
+                    .navTo("About",
+                        { student: this._student, name: "abc" })
             }
         });
     });

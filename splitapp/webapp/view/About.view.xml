@@ -1,0 +1,11 @@
+<mvc:View
+    controllerName="splitapp.controller.About"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="aboutpage"
+        title="About"
+    />
+</mvc:View>

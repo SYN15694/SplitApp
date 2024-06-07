@@ -10,7 +10,7 @@
         id="page"
         title="Detail"
     >
-        <!-- <customHeader>
+        <customHeader>
             <Bar id="BarDetail">
                 <contentLeft>
                     <Button
@@ -21,7 +21,7 @@
                     />
                 </contentLeft>
                 <contentMiddle>
-                    <Title text="Detail" />
+                    <Title id="DetailTitle" text="Detail" />
                 </contentMiddle>
                 <contentRight>
                     <Button
@@ -32,7 +32,7 @@
                     />
                 </contentRight>
             </Bar>
-        </customHeader> -->
+        </customHeader>
 
         <content>
             <Panel
