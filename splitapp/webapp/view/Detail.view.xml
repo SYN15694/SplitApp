@@ -39,30 +39,43 @@
                 id="Panel"
                 headerText="{students>Id} - {students>Name}"
             >
-                <HBox>
-                    <VBox class="sapUiSmallMarginEnd">
-                        <Text text="Id" />
+                <HBox id="Hbox1">
+                    <VBox
+                        id="Vbox1"
+                        class="sapUiSmallMarginEnd"
+                    >
+                        <Text
+                            id="TextId"
+                            text="Id"
+                        />
                         <Input
+                            id="InputId"
                             value="{students>Id}"
                             width="auto"
                             editable="false"
                             enabled="true"
                             class="sapUiSmallMarginBottom"
                         />
-                        <Text text="Name" />
+                        <Text
+                            id="NameText"
+                            text="Name"
+                        />
                         <Input
+                            id="InputName"
                             value="{students>Name}"
                             width="auto"
                             editable="false"
                             enabled="true"
                         />
                     </VBox>
-                    <VBox>
+                    <VBox id="Vbox2">
                         <Text
+                            id="DobText"
                             text="Dob"
                             class="customText"
                         />
                         <Input
+                            id="DobInput"
                             value="{students>Dob}"
                             width="auto"
                             editable="false"
@@ -118,6 +131,7 @@
                                     text="{students>UniId}"
                                 />
                                 <Label
+                                    id="UniLabel"
                                     text="University Name"
                                     labelFor="NameInput"
                                 />
