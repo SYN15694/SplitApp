@@ -85,45 +85,40 @@
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
-				"path": "splitapp.view",
-				"controlId": "App",
-				"type": "View",
-				"viewType": "XML",
-				"async": true
+        "path": "splitapp.view",
+        "controlId": "App",
+        "type": "View",
+        "viewType": "XML",
+        "async": true
       },
       "routes": [
         {
-					"name": "Master",
-					"pattern": "",
-					"target": [
-						"Master"
-					]
-				},
-				{
-					"name": "Detail",
-					"pattern": "students/:student:",
-					"target": [
-						"Master",
-						"Detail"
-					]
-				}
+          "name": "Master",
+          "pattern": "",
+          "target": [
+            "Master"
+          ]
+        },
+        {
+          "name": "Detail",
+          "pattern": "students/:student:",
+          "target": [
+            "Master",
+            "Detail"
+          ]
+        }
       ],
       "targets": {
         "Master": {
-					"name": "Master",
-					"controlAggregation": "masterPages",
-					"level": 0
-				},
-				"Detail": {
-					"name": "Detail",
-					"controlAggregation": "detailPages",
-					"title": {
-						"parts": [
-							"Name"
-						]
-					},
-					"level": 1
-				}
+          "name": "Master",
+          "controlAggregation": "masterPages",
+          "level": 0
+        },
+        "Detail": {
+          "name": "Detail",
+          "controlAggregation": "detailPages",
+          "level": 1
+        }
       }
     },
     "rootView": {
