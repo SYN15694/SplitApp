@@ -80,7 +80,7 @@
                     <VBox id="Vbox2">
                         <Text
                             id="DobText"
-                            text="Dob"
+                            text="Date of birth"
                             class="customText"
                         />
                         <Input
