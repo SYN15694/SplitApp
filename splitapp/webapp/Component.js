@@ -72,14 +72,13 @@ sap.ui.define([
                         var jsonModel = new JSONModel(oData);
                         jsonModel.setProperty("/editable", false);
                         this.setModel(jsonModel, "documents"); // setting the model data
-
-                        this._busyDialog.close();
                     },
                     error: (oError) => {
-                        this._busyDialog.close();
                         console.log("Error", oError);
                     }
                 });
+
+                this._busyDialog.close();
             }
 
         });
