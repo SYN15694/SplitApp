@@ -18,19 +18,19 @@ sap.ui.define([
                 */
                 if (!Device.system.phone) {
                     this.getOwnerComponent().getRouter()
-                        .navTo("Detail", { student: 0 }, true);
+                        .navTo("Detail", { document: 0 }, true);
                 }
             },
             onSelectionChange: function (oEvent) {
 
                 var oItem = oEvent.getParameter("listItem");
-                var oCtx = oItem.getBindingContext("students");
+                var oCtx = oItem.getBindingContext("documents");
                 var studentPath = oCtx.getPath();
-                var student = studentPath.split("/").slice(-1).pop();
+                var document = studentPath.split("/").slice(-1).pop();
 
                 this.getOwnerComponent().getRouter()
                     .navTo("Detail",
-                        { student: student })
+                        { document: document })
             }
 
 

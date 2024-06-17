@@ -46,7 +46,7 @@
         <content>
             <Panel
                 id="Panel"
-                headerText="{students>Id} - {students>Name}"
+                headerText="{documents>Bukrs} - {documents>Belnr}"
             >
                 <HBox id="Hbox1">
                     <VBox
@@ -59,7 +59,7 @@
                         />
                         <Input
                             id="InputId"
-                            value="{students>Id}"
+                            value="{documents>Belnr}"
                             width="auto"
                             editable="false"
                             enabled="true"
@@ -71,7 +71,7 @@
                         />
                         <Input
                             id="InputName"
-                            value="{students>Name}"
+                            value="{documents>Bukrs}"
                             width="auto"
                             editable="false"
                             enabled="true"
@@ -85,7 +85,7 @@
                         />
                         <Input
                             id="DobInput"
-                            value="{students>Dob}"
+                            value="{documents>Gjahr}"
                             width="auto"
                             editable="false"
                             enabled="true"
@@ -95,13 +95,13 @@
             </Panel>
             <Panel
                 id="TablePanel"
-                headerText="{students>Id} - {students>Name}"
+                headerText="{documents>Bukrs} - {documents>Belnr}"
                 width="auto"
                 height="auto"
             >
                 <Table
                     id="UniTable"
-                    items="{students>StudentToUni/results}"
+                    items="{documents>BkpfToBseg/results}"
                 >
                     <columns>
                         <Column id="IDColumn">
@@ -133,21 +133,19 @@
                             <cells>
                                 <Text
                                     id="IDText"
-                                    text="{students>Id}"
+                                    text="{documents>Bukrs}"
                                 />
                                 <Text
                                     id="UniIDText"
-                                    text="{students>UniId}"
+                                    text="{documents>Belnr}"
                                 />
-                                <Label
-                                    id="UniLabel"
-                                    text="University Name"
-                                    labelFor="NameInput"
+                                 <Text
+                                    id="GjahrText"
+                                    text="{documents>Gjahr}"
                                 />
                                 <Input
                                     id="NameInput"
-                                    value="{students>UniName}"
-                                    editable="{= ${students>/editable}}"
+                                    value="{documents>Buzei}"
                                     showValueHelp="true"
                                     valueHelpRequest=".onValueHelpRequest"
                                 />

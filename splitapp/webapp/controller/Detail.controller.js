@@ -10,10 +10,10 @@ sap.ui.define([
             },
             _onRouteMatched: function (oEvent) {
 
-                this._student = oEvent.getParameter("arguments").student;
+                this._document = oEvent.getParameter("arguments").document;
                 this.getView().bindElement({
-                    path: "/results/" + this._student,
-                    model: "students"
+                    path: "/results/" + this._document,
+                    model: "documents"
                 });
             },
 
@@ -21,7 +21,7 @@ sap.ui.define([
 
                 this.getOwnerComponent().getRouter()
                     .navTo("About",
-                        { student: this._student, name: "abc" })
+                        { student: this._document, name: "abc" })
             },
 
         });

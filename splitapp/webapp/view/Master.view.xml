@@ -38,14 +38,14 @@
 
         <List
             id="StudentList"
-            items="{students>/results}"
+            items="{documents>/results}"
             mode="SingleSelectMaster"
             selectionChange="onSelectionChange"
         >
             <items>
                 <StandardListItem
                     id="StudentListItem"
-                    title="{students>Name}"
+                    title="{documents>Belnr}"
                     type="Active"
                     press="onSelectionChange"
                 />

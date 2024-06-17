@@ -49,7 +49,7 @@ sap.ui.define([
                 });
 
                 // Create a new instance of the ODataModel
-                var oStudentModel = new ODataModel("/sap/opu/odata/sap/ZSTUDENT_SRV/", {
+                var oModel = new ODataModel("/sap/opu/odata/sap/ZFIDOC_SRV/", {
                     json: true,
                     loadMetadataAsync: true,
                     tokenHandling: true
@@ -58,20 +58,20 @@ sap.ui.define([
                 // Set the model to the core of the application
 
                 sap.ui.getCore().setModel(i18nModel, "i18n");
-                sap.ui.getCore().setModel(oStudentModel, "oDataModel");
+                sap.ui.getCore().setModel(oModel, "oDataModel");
 
                 this._busyDialog.open();
 
-                oStudentModel.read("/StudentSet", {
+                oModel.read("/BkpfSet", {
                     urlParameters: {
-                        "$expand": "StudentToUni",
+                        "$expand": "BkpfToBseg",
                         "$format": "json"
                     },
                     success: (oData, oResponse) => {
                         var headers = oResponse.headers;
                         var jsonModel = new JSONModel(oData);
                         jsonModel.setProperty("/editable", false);
-                        this.setModel(jsonModel, "students"); // setting the model data
+                        this.setModel(jsonModel, "documents"); // setting the model data
 
                         this._busyDialog.close();
                     },
@@ -81,7 +81,7 @@ sap.ui.define([
                     }
                 });
             }
-            
+
         });
     }
 );

@@ -17,7 +17,7 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZSTUDENT_SRV/",
+        "uri": "/sap/opu/odata/sap/ZFIDOC_SRV/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -101,7 +101,7 @@
         },
         {
           "name": "Detail",
-          "pattern": "detail/:student:",
+          "pattern": "detail/:document:/",
           "target": [
             "Master",
             "Detail"
