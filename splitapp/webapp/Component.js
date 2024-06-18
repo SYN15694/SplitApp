@@ -69,22 +69,19 @@ sap.ui.define([
 
             loadData: function () {
                 this._busyDialog.open();
-                this.skip = 0;
-                this.top = 30;
 
                 this.oModel.read("/BkpfSet", {
                     urlParameters: {
                         "$expand": "BkpfToBseg",
-                        "$format": "json",
-                        "$skip": this.skip,
-                        "$top": this.top
+                        "$format": "json"
                     },
+
                     success: (oData, oResponse) => {
                         var jsonModel = new JSONModel(oData);
                         jsonModel.setProperty("/editable", false);
                         this.setModel(jsonModel, "documents"); // setting the model data
-                        this.skip += this.top;
                     },
+
                     error: (oError) => {
                         console.log("Error", oError);
                     }

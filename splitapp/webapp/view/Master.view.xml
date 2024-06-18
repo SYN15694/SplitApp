@@ -40,7 +40,7 @@
             mode="SingleSelectMaster"
             selectionChange="onSelectionChange"
             growing="true"
-            growingThreshold="30"
+            growingThreshold="20"
             growingScrollToLoad="false"
         >
             <items>
@@ -52,16 +52,5 @@
                 />
             </items>
         </List>
-        <footer>
-            <Bar>
-                <contentRight>
-                    <Button
-                        id="loadMoreButton"
-                        text="Load More"
-                        press="onLoadMore"
-                    />
-                </contentRight>
-            </Bar>
-        </footer>
     </Page>
 </mvc:View>
