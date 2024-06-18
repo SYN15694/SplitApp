@@ -60,7 +60,7 @@ sap.ui.define([
                 sap.ui.getCore().setModel(i18nModel, "i18n");
                 sap.ui.getCore().setModel(this.oModel, "oDataModel");
 
-                
+
 
 
 
@@ -69,20 +69,33 @@ sap.ui.define([
 
             loadData: function () {
                 this._busyDialog.open();
+                this.top = 10;
+                this.skip = 0;
 
                 this.oModel.read("/BkpfSet", {
                     urlParameters: {
                         "$expand": "BkpfToBseg",
-                        "$format": "json"
+                        "$format": "json",
+                        "$top": this.top,
+                        "$skip": this.skip
                     },
 
-                    success: (oData, oResponse) => {
-                        var jsonModel = new JSONModel(oData);
-                        jsonModel.setProperty("/editable", false);
-                        this.setModel(jsonModel, "documents"); // setting the model data
-                    },
+                    success: function (oData, oResponse) {
+                        var jsonModel = this.getView().getModel("documents");
 
-                    error: (oError) => {
+                        if (!jsonModel) {
+                            jsonModel = new JSONModel();
+                            jsonModel.setProperty("/editable", false);
+                            this.setModel(jsonModel, "documents"); // setting the model data
+                        }
+
+                        var oOldData = jsonModel.getData();
+                        var oNewData = jQuery.extend(true, {}, oOldData, oData); //merge old data with new data
+                        jsonModel.setData(oNewData); //set new data
+                        this.skip += 10;
+                    }.bind(this),
+
+                    error: function (oError) {
                         console.log("Error", oError);
                     }
                 });

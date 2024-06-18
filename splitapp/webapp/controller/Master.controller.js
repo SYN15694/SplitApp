@@ -33,6 +33,10 @@ sap.ui.define([
                 this.getOwnerComponent().getRouter()
                     .navTo("Detail",
                         { document: document })
+            },
+
+            onLoadMore: function (oEvent) {
+                this.getOwnerComponent().loadData();
             }
         });
     });

@@ -42,6 +42,7 @@
             growing="true"
             growingThreshold="20"
             growingScrollToLoad="false"
+            updateFinished="onLoadMore"
         >
             <items>
                 <StandardListItem
