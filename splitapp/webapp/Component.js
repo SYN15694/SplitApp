@@ -61,7 +61,8 @@ sap.ui.define([
                 sap.ui.getCore().setModel(this.oModel, "oDataModel");
 
 
-
+                this.top = 10;
+                this.skip = 0;
 
 
 
@@ -69,9 +70,6 @@ sap.ui.define([
 
             loadData: function () {
                 this._busyDialog.open();
-                this.top = 10;
-                this.skip = 0;
-
                 this.oModel.read("/BkpfSet", {
                     urlParameters: {
                         "$expand": "BkpfToBseg",
@@ -79,29 +77,58 @@ sap.ui.define([
                         "$top": this.top,
                         "$skip": this.skip
                     },
-
                     success: function (oData, oResponse) {
-                        var jsonModel = this.getView().getModel("documents");
-
+                        var jsonModel = this.getModel("documents");
                         if (!jsonModel) {
-                            jsonModel = new JSONModel();
+                            jsonModel = new sap.ui.model.json.JSONModel();
                             jsonModel.setProperty("/editable", false);
-                            this.setModel(jsonModel, "documents"); // setting the model data
+                            this.setModel(jsonModel, "documents");
                         }
-
                         var oOldData = jsonModel.getData();
-                        var oNewData = jQuery.extend(true, {}, oOldData, oData); //merge old data with new data
-                        jsonModel.setData(oNewData); //set new data
+                        var oNewData = jQuery.extend(true, {}, oOldData, oData);
+                        jsonModel.setData(oNewData);
                         this.skip += 10;
                     }.bind(this),
-
                     error: function (oError) {
                         console.log("Error", oError);
-                    }
+                    }.bind(this)
                 });
-
                 this._busyDialog.close();
             }
+
+            // loadData: function (oOwnerComponent) {
+            //     oOwnerComponent._busyDialog.open();
+
+            //     oOwnerComponent.oModel.read("/BkpfSet", {
+            //         urlParameters: {
+            //             "$expand": "BkpfToBseg",
+            //             "$format": "json",
+            //             "$top": oOwnerComponent.top,
+            //             "$skip": oOwnerComponent.skip
+            //         },
+
+            //         success: (oData, oResponse) => {
+            //             var jsonModel = oOwnerComponent.getView().getModel("documents");
+
+            //             if (!jsonModel) {
+            //                 jsonModel = new JSONModel();
+            //                 jsonModel.setProperty("/editable", false);
+            //                 oOwnerComponent.setModel(jsonModel, "documents"); // setting the model data
+            //             }
+
+            //             var oOldData = jsonModel.getData();
+            //             var oNewData = jQuery.extend(true, {}, oOldData, oData); //merge old data with new data
+            //             jsonModel.setData(oNewData); //set new data
+            //             oOwnerComponent.skip += 10;
+            //         },
+
+            //         error: (oError) => {
+            //             console.log("Error", oError);
+            //         }
+            //     });
+
+            //     oOwnerComponent._busyDialog.close();
+            // }
 
         });
     }
