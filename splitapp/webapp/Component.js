@@ -60,7 +60,7 @@ sap.ui.define([
                 sap.ui.getCore().setModel(i18nModel, "i18n");
                 sap.ui.getCore().setModel(this.oModel, "oDataModel");
 
-                this.loadData();
+                
 
 
 
