@@ -49,7 +49,7 @@ sap.ui.define([
                 });
 
                 // Create a new instance of the ODataModel
-                var oModel = new ODataModel("/sap/opu/odata/sap/ZFIDOC_SRV/", {
+                this.oModel = new ODataModel("/sap/opu/odata/sap/ZFIDOC_SRV/", {
                     json: true,
                     loadMetadataAsync: true,
                     tokenHandling: true
@@ -58,20 +58,32 @@ sap.ui.define([
                 // Set the model to the core of the application
 
                 sap.ui.getCore().setModel(i18nModel, "i18n");
-                sap.ui.getCore().setModel(oModel, "oDataModel");
+                sap.ui.getCore().setModel(this.oModel, "oDataModel");
 
+                this.loadData();
+
+
+
+
+            },
+
+            loadData: function () {
                 this._busyDialog.open();
+                this.skip = 0;
+                this.top = 30;
 
-                oModel.read("/BkpfSet", {
+                this.oModel.read("/BkpfSet", {
                     urlParameters: {
                         "$expand": "BkpfToBseg",
-                        "$format": "json"
+                        "$format": "json",
+                        "$skip": this.skip,
+                        "$top": this.top
                     },
                     success: (oData, oResponse) => {
-                        var headers = oResponse.headers;
                         var jsonModel = new JSONModel(oData);
                         jsonModel.setProperty("/editable", false);
                         this.setModel(jsonModel, "documents"); // setting the model data
+                        this.skip += this.top;
                     },
                     error: (oError) => {
                         console.log("Error", oError);

@@ -9,9 +9,7 @@
         title="{i18n>title}"
     >
         <customHeader>
-            <Bar
-                id="Bar"
-            >
+            <Bar id="Bar">
                 <contentMiddle>
                     <SearchField
                         id="searchField"
@@ -41,6 +39,9 @@
             items="{documents>/results}"
             mode="SingleSelectMaster"
             selectionChange="onSelectionChange"
+            growing="true"
+            growingThreshold="30"
+            growingScrollToLoad="false"
         >
             <items>
                 <StandardListItem
@@ -51,5 +52,16 @@
                 />
             </items>
         </List>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button
+                        id="loadMoreButton"
+                        text="Load More"
+                        press="onLoadMore"
+                    />
+                </contentRight>
+            </Bar>
+        </footer>
     </Page>
 </mvc:View>
