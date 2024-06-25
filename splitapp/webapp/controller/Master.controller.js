@@ -7,8 +7,7 @@ sap.ui.define([
 
         return Controller.extend("splitapp.controller.Master", {
             onInit: function () {
-
-                this.getOwnerComponent().loadData();
+                this.onLoadMore();
                 this.getOwnerComponent().getRouter().getRoute("Master").attachPatternMatched(this._onRouteMatched, this);
             },
 
@@ -35,7 +34,7 @@ sap.ui.define([
                         { document: document })
             },
 
-            onLoadMore: function (oEvent) {
+            onLoadMore: function () {
                 this.getOwnerComponent().loadData();
             }
         });
