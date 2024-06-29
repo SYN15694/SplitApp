@@ -36,18 +36,23 @@
 
         <List
             id="StudentList"
-            items="{documents>/results}"
+            items="{
+                path: '/BkpfSet',
+                parameters: {
+                    $top: 10,
+                    $skip: 0
+                }
+            }"
             mode="SingleSelectMaster"
             selectionChange="onSelectionChange"
             growing="true"
-            growingThreshold="20"
+            growingThreshold="10"
             growingScrollToLoad="false"
-            updateFinished="onLoadMore"
         >
             <items>
                 <StandardListItem
                     id="StudentListItem"
-                    title="{documents>Belnr}"
+                    title="{Belnr}"
                     type="Active"
                     press="onSelectionChange"
                 />

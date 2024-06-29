@@ -58,7 +58,7 @@ sap.ui.define([
                 // Set the model to the core of the application
 
                 sap.ui.getCore().setModel(i18nModel, "i18n");
-                sap.ui.getCore().setModel(this.oModel, "oDataModel");
+                sap.ui.getCore().setModel(this.oModel);
 
 
                 this.top = 10;
@@ -72,23 +72,24 @@ sap.ui.define([
                 this._busyDialog.open();
                 this.oModel.read("/BkpfSet", {
                     urlParameters: {
-                        "$expand": "BkpfToBseg",
+                        // "$expand": "BkpfToBseg",
                         "$format": "json",
-                        "$top": this.top,
-                        "$skip": this.skip
+                        "$top": 10,
+                        "$skip": 0
                     },
                     success: function (oData, oResponse) {
-                        var jsonModel = this.getModel("documents");
-                        if (!jsonModel) {
-                            jsonModel = new sap.ui.model.json.JSONModel();
-                            jsonModel.setProperty("/editable", false);
-                            this.setModel(jsonModel, "documents");
-                        }
-                        var oOldData = jsonModel.getData();
-                        var oNewData = jQuery.extend(true, {}, oOldData, oData);
-                        jsonModel.setData(oNewData);
+                        // var jsonModel = this.getModel("documents");
+                        // if (!jsonModel) {
+                        //     jsonModel = new sap.ui.model.json.JSONModel();
+                        //     jsonModel.setProperty("/editable", false);
+                        //     this.setModel(jsonModel, "documents");
+                        // }
+                        // var oOldData = jsonModel.getData();
+                        // var oNewData = jQuery.extend(true, {}, oOldData, oData);
+                        // jsonModel.setData(oNewData);
                         this.skip += 10;
-                    }.bind(this),
+                    },
+                    // .bind(this),
                     error: function (oError) {
                         console.log("Error", oError);
                     }.bind(this)
