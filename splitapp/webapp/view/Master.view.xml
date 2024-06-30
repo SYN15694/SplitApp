@@ -37,7 +37,7 @@
         <List
             id="StudentList"
             items="{
-                path: '/BkpfSet',
+                path:'documents>/BkpfSet',
                 parameters: {
                     $top: 10,
                     $skip: 0
@@ -52,7 +52,7 @@
             <items>
                 <StandardListItem
                     id="StudentListItem"
-                    title="{Belnr}"
+                    title="{documents>Belnr}"
                     type="Active"
                     press="onSelectionChange"
                 />

@@ -32,6 +32,7 @@ server:
         backend:
           - path: /sap
             url: http://hana.ciber.vn:8001
+            client: "120"
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:

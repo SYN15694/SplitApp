@@ -69,7 +69,7 @@
           "bundleName": "splitapp.i18n.i18n"
         }
       },
-      "": {
+      "documents": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {}

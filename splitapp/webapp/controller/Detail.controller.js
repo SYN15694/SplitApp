@@ -12,8 +12,17 @@ sap.ui.define([
 
                 this._document = oEvent.getParameter("arguments").document;
                 this.getView().bindElement({
-                    path: "/results/" + this._document,
-                    model: "documents"
+                    // path: "/results/" + this._document,
+                    path: "/" + this._document + 'BkpfToBseg',
+                    model: "documents",
+                    events: {
+                        dataRequested: function () {
+                        //   console.log("Data requested for path: " + path);
+                        },
+                        dataReceived: function (oData) {
+                          console.log("Data received: ", oData);
+                        }
+                      }
                 });
             },
 

@@ -50,11 +50,25 @@ sap.ui.define([
                 this.setModel(i18nModel, "i18n");
 
                 // Create a new instance of the ODataModel
-                this.oModel = new ODataModel("/sap/opu/odata/sap/ZFIDOC_SRV/", {
-                    json: true,
-                    loadMetadataAsync: true
-                });
-                this.setModel(this.oModel);
+                // var oModel = new ODataModel("/sap/opu/odata/sap/ZFIDOC_SRV/", {
+                //     json: true,
+                //     loadMetadataAsync: true
+                // });
+                // sap.ui.getCore().setModel(oModel);
+
+                // // Read data from the OData model
+                // oModel.read("/BkpfSet", {
+                //     urlParameters: {
+                //         // "$expand": "BkpfToBseg",
+                //         "$format": "json"
+                //     },
+                //     success: function (oData) {
+                //         console.log("Data read successfully:", oData);
+                //     },
+                //     error: function (oError) {
+                //         console.error("Error reading data:", oError);
+                //     }
+                // });
 
                 // Set the model to the core of the application
 

@@ -101,7 +101,7 @@
             >
                 <Table
                     id="UniTable"
-                    items="{documents>BkpfToBseg/results}"
+                    items="{documents>BkpfToBseg}"
                 >
                     <columns>
                         <Column id="IDColumn">

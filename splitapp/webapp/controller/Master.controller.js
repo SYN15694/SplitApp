@@ -18,8 +18,8 @@ sap.ui.define([
                 * out of scope of this sample
                 */
                 if (!Device.system.phone) {
-                    this.getOwnerComponent().getRouter()
-                        .navTo("Detail", { document: 0 }, true);
+                    // this.getOwnerComponent().getRouter()
+                    //     .navTo("Detail", { document: 0 }, true);
                 }
             },
             onSelectionChange: function (oEvent) {
