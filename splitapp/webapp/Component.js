@@ -3,21 +3,21 @@
  */
 
 sap.ui.define([
-    "sap/ui/core/UIComponent",
-    "sap/ui/Device",
-    "splitapp/model/models",
-    "sap/ui/model/odata/v2/ODataModel",
-    'sap/ui/model/json/JSONModel',
-    'sap/f/library',
-    "sap/ui/model/resource/ResourceModel",
-    "sap/m/BusyDialog",
-    "sap/m/MessagePopover",
-    "sap/m/MessagePopoverItem",
-    "sap/m/DatePicker",
-    "sap/m/Dialog",
-    "sap/m/Button",
-    "sap/m/Text"
-],
+        "sap/ui/core/UIComponent",
+        "sap/ui/Device",
+        "splitapp/model/models",
+        "sap/ui/model/odata/v2/ODataModel",
+        'sap/ui/model/json/JSONModel',
+        'sap/f/library',
+        "sap/ui/model/resource/ResourceModel",
+        "sap/m/BusyDialog",
+        "sap/m/MessagePopover",
+        "sap/m/MessagePopoverItem",
+        "sap/m/DatePicker",
+        "sap/m/Dialog",
+        "sap/m/Button",
+        "sap/m/Text"
+    ],
     function (UIComponent, Device, models, ODataModel, JSONModel, fioriLibrary,
         ResourceModel, BusyDialog, MessagePopover, MessagePopoverItem, DatePicker, Dialog, Button, Text) {
         "use strict";
@@ -47,89 +47,18 @@ sap.ui.define([
                 var i18nModel = new ResourceModel({
                     bundleName: "studentproject.i18n.i18n" // adjust to your app structure
                 });
+                this.setModel(i18nModel, "i18n");
 
                 // Create a new instance of the ODataModel
                 this.oModel = new ODataModel("/sap/opu/odata/sap/ZFIDOC_SRV/", {
                     json: true,
-                    loadMetadataAsync: true,
-                    tokenHandling: true
+                    loadMetadataAsync: true
                 });
+                this.setModel(this.oModel);
 
                 // Set the model to the core of the application
 
-                sap.ui.getCore().setModel(i18nModel, "i18n");
-                sap.ui.getCore().setModel(this.oModel);
-
-
-                this.top = 10;
-                this.skip = 0;
-
-                // this.loadData();
-
-            },
-
-            loadData: function () {
-                this._busyDialog.open();
-                this.oModel.read("/BkpfSet", {
-                    urlParameters: {
-                        // "$expand": "BkpfToBseg",
-                        "$format": "json",
-                        "$top": 10,
-                        "$skip": 0
-                    },
-                    success: function (oData, oResponse) {
-                        // var jsonModel = this.getModel("documents");
-                        // if (!jsonModel) {
-                        //     jsonModel = new sap.ui.model.json.JSONModel();
-                        //     jsonModel.setProperty("/editable", false);
-                        //     this.setModel(jsonModel, "documents");
-                        // }
-                        // var oOldData = jsonModel.getData();
-                        // var oNewData = jQuery.extend(true, {}, oOldData, oData);
-                        // jsonModel.setData(oNewData);
-                        this.skip += 10;
-                    },
-                    // .bind(this),
-                    error: function (oError) {
-                        console.log("Error", oError);
-                    }.bind(this)
-                });
-                this._busyDialog.close();
             }
-
-            // loadData: function (oOwnerComponent) {
-            //     oOwnerComponent._busyDialog.open();
-
-            //     oOwnerComponent.oModel.read("/BkpfSet", {
-            //         urlParameters: {
-            //             "$expand": "BkpfToBseg",
-            //             "$format": "json",
-            //             "$top": oOwnerComponent.top,
-            //             "$skip": oOwnerComponent.skip
-            //         },
-
-            //         success: (oData, oResponse) => {
-            //             var jsonModel = oOwnerComponent.getView().getModel("documents");
-
-            //             if (!jsonModel) {
-            //                 jsonModel = new JSONModel();
-            //                 jsonModel.setProperty("/editable", false);
-            //                 oOwnerComponent.setModel(jsonModel, "documents"); // setting the model data
-            //             }
-
-            //             var oOldData = jsonModel.getData();
-            //             var oNewData = jQuery.extend(true, {}, oOldData, oData); //merge old data with new data
-            //             jsonModel.setData(oNewData); //set new data
-            //             oOwnerComponent.skip += 10;
-            //         },
-
-            //         error: (oError) => {
-            //             console.log("Error", oError);
-            //         }
-            //     });
-
-            //     oOwnerComponent._busyDialog.close();
-            // }
 
         });
     }
