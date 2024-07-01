@@ -39,6 +39,12 @@
                         press="onReject"
                         icon="sap-icon://decline"
                     />
+                      <Button
+                        id="DeleteButton"
+                        text="Delete"
+                        press="onDelete"
+                        icon="sap-icon://delete"
+                    />
                 </contentRight>
             </Bar>
         </customHeader>
@@ -100,8 +106,9 @@
                 height="auto"
             >
                 <Table
-                    id="UniTable"
+                    id="BsegTable"
                     items="{documents>BkpfToBseg}"
+                     mode="SingleSelect"
                 >
                     <columns>
                         <Column id="IDColumn">

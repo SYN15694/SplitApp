@@ -15,23 +15,57 @@ sap.ui.define([
                     // path: "/results/" + this._document,
                     path: "/" + this._document,
                     model: "documents"
-                    // events: {
-                    //     dataRequested: function () {
-                    //     //   console.log("Data requested for path: " + path);
-                    //     },
-                    //     dataReceived: function (oData) {
-                    //       console.log("Data received: ", oData);
-                    //     }
-                    //   }
                 });
             },
 
             onAccept: function () {
 
-                this.getOwnerComponent().getRouter()
-                    .navTo("About",
-                        { student: this._document, name: "abc" })
+                
+                var payload = {
+                    "Bukrs": "CTEL",
+                    "Belnr": "4500000012",
+                    "Gjahr": "2021",
+                    "Buzei": "001",
+                    "Buzid": "M"
+                };
+
+                var path = "/" + this._document + "/BkpfToBseg";
+                var odataModel = this.getView().getModel("documents");
+
+                var oPendingChanges = odataModel.getPendingChanges();
+                // @ts-ignore
+                odataModel.create(path, payload, {
+                    success: function (data, response) {
+
+                    },
+                    error: function (error) {
+
+                    }
+                });
+
             },
+
+            onDelete: function () {
+                var odataModel = this.getView().getModel("documents");
+                var oTable = this.getView().byId("BsegTable");
+                var oSelectedItem = oTable.getSelectedItem();
+                if (oSelectedItem) {
+                    var oBindingContext = oSelectedItem.getBindingContext("documents");
+                    var path = oBindingContext.getPath();
+                   
+                    odataModel.remove(path, {
+                        success: function (data, response) {
+                            // MessageBox.success("Deleted data");
+                        },
+                        error: function (error) {
+                            // MessageBox.error("Deletion failed");
+                        }
+                    })
+
+                } else {
+
+                }
+            }
 
         });
     });
