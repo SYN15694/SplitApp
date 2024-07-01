@@ -9,7 +9,7 @@ sap.ui.define([
                 this.getOwnerComponent().getRouter().getRoute("Detail").attachPatternMatched(this._onRouteMatched, this);
             },
             _onRouteMatched: function (oEvent) {
-
+               
                 this._document = oEvent.getParameter("arguments").document;
                 this.getView().bindElement({
                     // path: "/results/" + this._document,
@@ -20,7 +20,7 @@ sap.ui.define([
 
             onAccept: function () {
 
-                
+
                 var payload = {
                     "Bukrs": "CTEL",
                     "Belnr": "4500000012",
@@ -52,7 +52,7 @@ sap.ui.define([
                 if (oSelectedItem) {
                     var oBindingContext = oSelectedItem.getBindingContext("documents");
                     var path = oBindingContext.getPath();
-                   
+
                     odataModel.remove(path, {
                         success: function (data, response) {
                             // MessageBox.success("Deleted data");
