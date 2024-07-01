@@ -26,8 +26,8 @@ sap.ui.define([
 
                 var oItem = oEvent.getParameter("listItem");
                 var oCtx = oItem.getBindingContext("documents");
-                var studentPath = oCtx.getPath();
-                var document = studentPath.split("/").slice(-1).pop();
+                var Path = oCtx.getPath();
+                var document = Path.split("/").slice(-1).pop();
 
                 this.getOwnerComponent().getRouter()
                     .navTo("Detail",

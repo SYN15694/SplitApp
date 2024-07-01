@@ -24,6 +24,15 @@
           "localUri": "localService/metadata.xml",
           "odataVersion": "2.0"
         }
+      },
+      "SearchHelpService": {
+        "uri": "/sap/opu/odata/sap/ZSH_MAVATTU_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
       }
     }
   },
@@ -71,6 +80,11 @@
       },
       "documents": {
         "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      },
+      "mavattush": {
+        "dataSource": "SearchHelpService",
         "preload": true,
         "settings": {}
       }
