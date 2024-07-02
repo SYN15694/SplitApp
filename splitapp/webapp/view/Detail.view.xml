@@ -45,6 +45,12 @@
                         press="onDelete"
                         icon="sap-icon://delete"
                     />
+                      <Button
+                        id="SaveButton"
+                        text="Save"
+                        press="onSave"
+                        icon="sap-icon://save"
+                    />
                 </contentRight>
             </Bar>
         </customHeader>
@@ -155,6 +161,7 @@
                                     value="{documents>Buzei}"
                                     showValueHelp="true"
                                     valueHelpRequest=".onValueHelpRequest"
+                                    change="onInputChange"
                                 />
                                 <!-- <DatePicker
                             id="dummyDatePicker"
