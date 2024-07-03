@@ -5,6 +5,7 @@
     xmlns="sap.m"
     xmlns:l="sap.ui.layout"
     xmlns:form="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified"
 >
     <Page
         id="page"
@@ -39,17 +40,29 @@
                         press="onReject"
                         icon="sap-icon://decline"
                     />
-                      <Button
+                    <Button
                         id="DeleteButton"
                         text="Delete"
                         press="onDelete"
                         icon="sap-icon://delete"
                     />
-                      <Button
+                    <Button
                         id="SaveButton"
                         text="Save"
                         press="onSave"
                         icon="sap-icon://save"
+                    />
+                    <u:FileUploader
+                        id="fileUploader"
+                        fileType="xlsx"
+                        change="onFileUpload"
+                        placeholder="Choose a file to upload"
+                        buttonOnly="true"
+                    />
+                    <Button
+                        id="DonwloadTemplateButton"
+                        text="Download Template"
+                        press="onTemplateDownload"
                     />
                 </contentRight>
             </Bar>
@@ -114,7 +127,7 @@
                 <Table
                     id="BsegTable"
                     items="{documents>BkpfToBseg}"
-                     mode="SingleSelect"
+                    mode="SingleSelect"
                 >
                     <columns>
                         <Column id="IDColumn">
@@ -152,7 +165,7 @@
                                     id="UniIDText"
                                     text="{documents>Belnr}"
                                 />
-                                 <Text
+                                <Text
                                     id="GjahrText"
                                     text="{documents>Gjahr}"
                                 />
