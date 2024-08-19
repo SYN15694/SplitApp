@@ -1,85 +1,86 @@
 {
-    "configurations": [
-        {
-            "name": "Start splitapp",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npx",
-            "cwd": "${workspaceFolder}/splitapp",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "args": [
-                "--open",
-                "test/flpSandbox.html#splitapp-display"
-            ],
-            "console": "internalConsole",
-            "internalConsoleOptions": "openOnSessionStart",
-            "outputCapture": "std",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
-            }
-        },
-        {
-            "name": "Start splitapp Mock",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/splitapp",
-            "runtimeExecutable": "npx",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "args": [
-                "--config",
-                "./ui5-mock.yaml",
-                "--open",
-                "test/flpSandbox.html#splitapp-display"
-            ],
-            "console": "internalConsole",
-            "internalConsoleOptions": "openOnSessionStart",
-            "outputCapture": "std",
-            "port": 9229,
-            "env": {
-                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
-            }
-        },
-        {
-            "name": "Start splitapp Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/splitapp",
-            "runtimeExecutable": "npx",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "args": [
-                "--config",
-                "./ui5-local.yaml",
-                "--open",
-                "test/flpSandbox.html#splitapp-display"
-            ],
-            "console": "internalConsole",
-            "internalConsoleOptions": "openOnSessionStart",
-            "outputCapture": "std",
-            "port": 9229,
-            "env": {
-                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
-            }
-        }
-    ],
-    "compounds": []
+  "configurations": [
+    {
+      "name": "Start splitapp",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/splitapp",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "test/flpSandbox.html#splitapp-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start splitapp Mock",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/splitapp",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-mock.yaml",
+        "--open",
+        "test/flpSandbox.html#splitapp-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "Start splitapp Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/splitapp",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html#splitapp-display"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+      }
+    }
+  ],
+  "compounds": [],
+  "version": "0.2.0"
 }

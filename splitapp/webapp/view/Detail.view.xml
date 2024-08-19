@@ -105,7 +105,7 @@
                     <VBox id="Vbox2">
                         <Text
                             id="DobText"
-                            text="Date of birth"
+                            text="Date of Birth"
                             class="customText"
                         />
                         <Input
