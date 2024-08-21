@@ -27,7 +27,7 @@ sap.ui.define([
                 var payload = {
                     "Bukrs": "CTEL",
                     "Belnr": "4500000012",
-                    "Gjahr": "2021",
+                    "Gjahr": "2022",
                     "Buzei": "001",
                     "Buzid": "M"
                 };
