@@ -12,7 +12,7 @@
   "devDependencies": {
     "@sap-ux/ui5-middleware-fe-mockserver": "^2.2.56",
     "@sap/ux-ui5-tooling": "^1.14.4",
-    "@ui5/cli": "^3.11.0",
+    "@ui5/cli": "^3.11.1",
     "nwabap-ui5uploader": "^1.2.0",
     "rimraf": "^5.0.5",
     "ui5-middleware-servestatic": "^3.1.1",
