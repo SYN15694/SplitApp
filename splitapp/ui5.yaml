@@ -6,19 +6,28 @@ metadata:
 type: application
 server:
   customMiddleware:
-    - name: fiori-tools-proxy
+    - name: fiori-tools-proxy   
       afterMiddleware: compression
       configuration:
-        ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
-        ui5:
-          path:
-            - /resources
-            - /test-resources
-          url: https://ui5.sap.com
+        # ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        # ui5:
+        # paths:
+        #   - path: /resources
+        #     src: "D:/SAPUI5-SDK/resources"
+        #   - path: /test-resources
+        #     src: "D:/SAPUI5-SDK/resources"
+          # url: https://ui5.sap.com
         backend:
           - path: /sap
             url: http://hana.ciber.vn:8001
             client: "120"
+    # - name: backend-proxy-middleware
+    #   afterMiddleware: compression
+    #   configuration:
+    #     backend:
+    #       path: /sap
+    #       url: http://hana.ciber.vn:8001
+    #       client: "120"
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

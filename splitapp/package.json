@@ -15,6 +15,7 @@
     "@ui5/cli": "^3.11.0",
     "nwabap-ui5uploader": "^1.2.0",
     "rimraf": "^5.0.5",
+    "ui5-middleware-servestatic": "^3.1.1",
     "ui5-task-flatten-library": "3.0.2"
   },
   "scripts": {
@@ -38,5 +39,8 @@
     ]
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@sap-ux/backend-proxy-middleware": "^0.8.5"
+  }
 }

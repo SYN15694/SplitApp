@@ -7,6 +7,7 @@ builder:
     excludes:
       - /test/**
       - /localService/**
+      - /resources/splitapp/resources/**
   customTasks:
     - name: deploy-to-abap
       afterTask: generateCachebusterInfo
@@ -21,3 +22,4 @@ builder:
           transport: ED1K900109
         exclude:
           - /test/
+          - /resources/splitapp/resources/**
